@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eisverkauf</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f4f4;margin:0}
+header{background:#ff5f5f;color:#fff;padding:16px;text-align:center;font-size:28px}
+main{max-width:500px;margin:auto;padding:16px}
+.card{background:#fff;padding:16px;border-radius:12px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+input,select,button{width:100%;padding:12px;margin-top:8px;font-size:18px}
+button{background:#ff5f5f;color:#fff;border:none;border-radius:8px}
+#summe{font-size:24px;font-weight:bold;margin-top:15px}
+</style>
 </head>
 <body>
-<h1>🍦 Eisverkauf</h1>
-<p>Die App wird gerade eingerichtet.</p>
+<header>🍦 Eisverkauf</header>
+<main>
+<div class="card">
+<select id="preis">
+<option value="1.5">Eiskugel – 1,50 €</option>
+<option value="2.5">Kleiner Becher – 2,50 €</option>
+<option value="3.5">Großer Becher – 3,50 €</option>
+</select>
+<input id="anzahl" type="number" value="1" min="1">
+<button onclick="calc()">Berechnen</button>
+<div id="summe">Gesamt: 0,00 €</div>
+</div>
+</main>
+<script>
+function calc(){
+const p=Number(document.getElementById('preis').value);
+const a=Number(document.getElementById('anzahl').value);
+document.getElementById('summe').innerText='Gesamt: '+(p*a).toLocaleString('de-DE',{style:'currency',currency:'EUR'});
+}
+</script>
 </body>
 </html>
