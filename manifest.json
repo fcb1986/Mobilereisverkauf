@@ -1,0 +1,15 @@
+{
+  "name": "Armins Eisverkauf",
+  "short_name": "Eisverkauf",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d94343",
+  "icons": [
+    {
+      "src": "Icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
