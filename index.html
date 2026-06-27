@@ -1,119 +1,58 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eisverkauf</title>
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Eisverkauf</title>
 <style>
-body{font-family:Arial,sans-serif;background:#f4f4f4;margin:0;color:#111}
-header{background:#ff5f5f;color:#fff;padding:18px;text-align:center;font-size:30px;font-weight:bold}
-main{max-width:520px;margin:auto;padding:16px}
-.card{background:#fff;padding:16px;border-radius:16px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
-label{font-weight:bold;display:block;margin-top:8px;margin-bottom:6px}
-input,select,button{width:100%;padding:14px;margin-top:6px;font-size:20px;box-sizing:border-box;border-radius:10px;border:1px solid #aaa}
-button{background:#ff5f5f;color:#fff;border:none;font-weight:bold}
-button.secondary{background:#555;margin-top:10px}
-button.small{width:auto;padding:8px 12px;font-size:16px;background:#ddd;color:#111}
-.row{display:flex;gap:10px;align-items:center;justify-content:space-between;border-bottom:1px solid #eee;padding:10px 0;font-size:18px}
-.name{font-weight:bold}
-.muted{color:#666;font-size:15px}
-#summe{font-size:28px;font-weight:bold;margin-top:14px;text-align:right}
-.empty{color:#666;text-align:center;padding:18px 0}
-</style>
-</head>
-<body>
-<header>🍦 Eisverkauf</header>
-<main>
+body{font-family:Arial,sans-serif;background:#f4f4f4;margin:0}header{background:#d94343;color:white;text-align:center;padding:18px;font-size:28px;font-weight:bold}main{max-width:520px;margin:auto;padding:15px}.card{background:white;border-radius:16px;padding:16px;margin-bottom:14px;box-shadow:0 2px 8px #999}select,input,button{width:100%;font-size:20px;padding:13px;margin-top:8px;border-radius:10px;box-sizing:border-box}button{background:#d94343;color:white;border:0;font-weight:bold}.grau{background:#555}.zeile{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding:10px 0}.summe{font-size:28px;font-weight:bold;text-align:right;margin-top:15px}
+</style></head><body>
+<header>🍦 Eisverkauf</header><main>
 <div class="card">
-<label for="produkt">Produkt</label>
 <select id="produkt">
-<option value="Eiskugel|1.5">Eiskugel – 1,50 €</option>
-<option value="Kleiner Becher|2.5">Kleiner Becher – 2,50 €</option>
-<option value="Großer Becher|3.5">Großer Becher – 3,50 €</option>
-<option value="Eiskaffee|4">Eiskaffee – 4,00 €</option>
-<option value="Eisbecher Spezial|5">Eisbecher Spezial – 5,00 €</option>
+<option value="Cornetto Buttermilch Zitrone|2">Cornetto Buttermilch Zitrone – 2,00 €</option>
+<option value="Cornetto Haselnuss|2">Cornetto Haselnuss – 2,00 €</option>
+<option value="Cornetto Erdbeer|2">Cornetto Erdbeer – 2,00 €</option>
+<option value="Nogger Choc|2">Nogger Choc – 2,00 €</option>
+<option value="Domino|1.3">Domino – 1,30 €</option>
+<option value="Riesen Happen|1.7">Riesen Happen – 1,70 €</option>
+<option value="Mini Milk|0.8">Mini Milk – 0,80 €</option>
+<option value="Flutsch Finger|1.3">Flutsch Finger – 1,30 €</option>
+<option value="Magnum Classic|2.9">Magnum Classic – 2,90 €</option>
+<option value="Magnum White Chocolate|2.9">Magnum White Chocolate – 2,90 €</option>
+<option value="Magnum Mandel|2.9">Magnum Mandel – 2,90 €</option>
+<option value="Ben & Jerry's Strawberry Cheesecake|2.85">Ben & Jerry's Strawberry Cheesecake – 2,85 €</option>
+<option value="Ben & Jerry's Cookie Dough|2.85">Ben & Jerry's Cookie Dough – 2,85 €</option>
+<option value="Ben & Jerry's Chocolate Fudge Brownie|2.85">Ben & Jerry's Chocolate Fudge Brownie – 2,85 €</option>
 </select>
-
-<label for="anzahl">Anzahl</label>
-<input id="anzahl" type="number" value="1" min="1">
-
-<button id="addBtn">Zur Liste hinzufügen</button>
+<input id="anzahl" type="number" min="1" value="1">
+<button onclick="add()">Zur Liste hinzufügen</button>
 </div>
 
 <div class="card">
 <h2>Verkaufsliste</h2>
-<div id="liste" class="empty">Noch nichts eingetragen.</div>
-<div id="summe">Gesamt: 0,00 €</div>
-<button class="secondary" id="clearBtn">Liste löschen</button>
+<div id="liste">Noch nichts eingetragen.</div>
+<div class="summe" id="gesamt">Gesamt: 0,00 €</div>
+<button class="grau" onclick="clearList()">Liste löschen</button>
 </div>
 </main>
 
 <script>
-const produkt=document.getElementById('produkt');
-const anzahl=document.getElementById('anzahl');
-const liste=document.getElementById('liste');
-const summe=document.getElementById('summe');
-const addBtn=document.getElementById('addBtn');
-const clearBtn=document.getElementById('clearBtn');
-let verkauf=[];
-
-function euro(wert){
-return wert.toLocaleString('de-DE',{style:'currency',currency:'EUR'});
+let liste=[];
+function euro(x){return x.toLocaleString('de-DE',{style:'currency',currency:'EUR'});}
+function add(){
+let [name,preis]=document.getElementById('produkt').value.split('|');
+preis=Number(preis);
+let anzahl=Number(document.getElementById('anzahl').value)||1;
+liste.push({name,preis,anzahl});
+document.getElementById('anzahl').value=1;
+show();
 }
-
-function anzeigen(){
-if(verkauf.length===0){
-liste.className='empty';
-liste.innerHTML='Noch nichts eingetragen.';
-summe.textContent='Gesamt: 0,00 €';
-return;
+function del(i){liste.splice(i,1);show();}
+function clearList(){liste=[];show();}
+function show(){
+let box=document.getElementById('liste'),gesamt=0;
+if(liste.length===0){box.innerHTML='Noch nichts eingetragen.';document.getElementById('gesamt').innerText='Gesamt: 0,00 €';return;}
+box.innerHTML='';
+liste.forEach((e,i)=>{
+let sum=e.preis*e.anzahl;gesamt+=sum;
+box.innerHTML+=`<div class="zeile"><div><b>${e.anzahl}x ${e.name}</b><br>${euro(e.preis)} pro Stück</div><div><b>${euro(sum)}</b><br><button onclick="del(${i})">X</button></div></div>`;
+});
+document.getElementById('gesamt').innerText='Gesamt: '+euro(gesamt);
 }
-
-liste.className='';
-liste.innerHTML='';
-let gesamt=0;
-
-verkauf.forEach((e,i)=>{
-gesamt+=e.summe;
-const div=document.createElement('div');
-div.className='row';
-div.innerHTML='<div><div class="name">'+e.anzahl+'x '+e.name+'</div><div class="muted">'+euro(e.preis)+' pro Stück</div></div><div><b>'+euro(e.summe)+'</b><br><button class="small" data-i="'+i+'">X</button></div>';
-liste.appendChild(div);
-});
-
-summe.textContent='Gesamt: '+euro(gesamt);
-
-document.querySelectorAll('button[data-i]').forEach(btn=>{
-btn.addEventListener('click',()=>{
-verkauf.splice(Number(btn.dataset.i),1);
-anzeigen();
-});
-});
-}
-
-addBtn.addEventListener('click',()=>{
-const teile=produkt.value.split('|');
-const name=teile[0];
-const preis=Number(teile[1]);
-const menge=Math.max(1,Number(anzahl.value)||1);
-
-verkauf.push({
-name:name,
-preis:preis,
-anzahl:menge,
-summe:preis*menge
-});
-
-anzahl.value=1;
-anzeigen();
-});
-
-clearBtn.addEventListener('click',()=>{
-verkauf=[];
-anzeigen();
-});
-
-anzeigen();
-</script>
-</body>
-</html>
+</script></body></html>
