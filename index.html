@@ -1,18 +1,142 @@
-<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#d94343"><title>Armins Eisverkauf 2.0</title>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#d94343">
+<title>Armins Eisverkauf 2.1</title>
 <style>
-:root{--rot:#d94343;--rot2:#a72d2d;--gruen:#208b3a;--orange:#e07a00;--grau:#555;--card:#fff;--text:#1f2937;--line:#ffd7b5;--shadow:0 8px 24px rgba(80,30,10,.14)}*{box-sizing:border-box}body{font-family:Arial,sans-serif;background:linear-gradient(180deg,#ffe4c7,#fff7ed);margin:0;color:var(--text)}header{background:linear-gradient(135deg,var(--rot),var(--rot2));color:white;text-align:center;padding:14px 12px 16px;font-size:27px;font-weight:bold;box-shadow:0 4px 18px rgba(0,0,0,.18);position:sticky;top:0;z-index:5}header img{display:block;width:100%;max-height:135px;object-fit:cover;border-radius:16px;margin:0 auto 9px;box-shadow:0 5px 16px rgba(0,0,0,.2)}.klein{font-size:14px;font-weight:normal;opacity:.95;margin-top:4px}main{max-width:580px;margin:auto;padding:14px 14px 95px}.card{background:var(--card);border-radius:18px;padding:15px;margin-bottom:14px;box-shadow:var(--shadow);border:1px solid var(--line)}h2{margin:0 0 11px;color:#7c2d12;font-size:22px}select,input,button{width:100%;font-size:20px;padding:13px;margin-top:8px;border-radius:13px;box-sizing:border-box}select,input{border:1px solid var(--line);background:#fffaf5;color:var(--text)}button{background:var(--rot);color:white;border:0;font-weight:bold;box-shadow:0 3px 8px rgba(0,0,0,.12)}.gruen{background:var(--gruen)}.grau{background:var(--grau)}.orange{background:var(--orange)}.row{display:grid;grid-template-columns:1fr 90px;gap:8px}.zeile{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #ffe2c7;padding:11px 0;gap:10px}.miniBtn{width:auto;padding:8px 12px;margin-top:6px;border-radius:10px;font-size:16px;background:#b91c1c}.summe,.rueck{font-size:30px;font-weight:bold;text-align:right;margin-top:15px;color:#7c2d12}.rueck{color:var(--gruen)}.fehl{color:#b91c1c!important}.info{font-size:19px;line-height:1.55;background:#fff7ed;border-radius:14px;padding:12px;border:1px solid var(--line);overflow-x:auto}.badge{display:inline-block;background:#ffedd5;color:#7c2d12;border-radius:999px;padding:6px 10px;font-size:14px;font-weight:bold;margin-top:8px}.footer{position:fixed;left:0;right:0;bottom:0;background:rgba(255,247,237,.96);border-top:1px solid var(--line);padding:9px 14px;backdrop-filter:blur(10px)}.footerInner{max-width:580px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}.footer button{margin-top:0;font-size:17px;padding:12px}table{width:100%;border-collapse:collapse;font-size:15px;background:white}th,td{border-bottom:1px solid #ffd7b5;padding:7px 4px;text-align:left}td:last-child,th:last-child{text-align:right}.quick{display:grid;grid-template-columns:1fr 1fr;gap:8px}.quick button{font-size:16px;padding:10px}@media print{header,.card:not(.druckbereich),.footer,button{display:none!important}body{background:white;color:black}main{padding:0;max-width:none}.druckbereich{display:block!important;box-shadow:none;border:0}.info{border:0;background:white;font-size:14px}h2{color:black}table{font-size:12px}.printOnly{display:block!important}}.printOnly{display:none}
-</style></head><body>
-<header><img src="banner.png" alt="Armins Eisverkauf" onerror="this.style.display='none'">🍦 Armins Eisverkauf 2.0<div class="klein">Verkauf · Rückgeld · Statistik · Druckbericht</div></header>
+:root{--rot:#d94343;--rot2:#a72d2d;--gruen:#208b3a;--orange:#e07a00;--grau:#555;--card:#fff;--text:#1f2937;--line:#ffd7b5;--shadow:0 8px 24px rgba(80,30,10,.14)}
+*{box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:linear-gradient(180deg,#ffe4c7,#fff7ed);margin:0;color:var(--text)}
+header{background:linear-gradient(135deg,var(--rot),var(--rot2));color:white;text-align:center;padding:14px 12px 16px;font-size:27px;font-weight:bold;box-shadow:0 4px 18px rgba(0,0,0,.18);position:sticky;top:0;z-index:5}
+header img{display:block;width:100%;max-height:135px;object-fit:cover;border-radius:16px;margin:0 auto 9px;box-shadow:0 5px 16px rgba(0,0,0,.2)}
+.klein{font-size:14px;font-weight:normal;opacity:.95;margin-top:4px}
+main{max-width:580px;margin:auto;padding:14px 14px 95px}
+.card{background:var(--card);border-radius:18px;padding:15px;margin-bottom:14px;box-shadow:var(--shadow);border:1px solid var(--line)}
+h2{margin:0 0 11px;color:#7c2d12;font-size:22px}
+select,input,button{width:100%;font-size:20px;padding:13px;margin-top:8px;border-radius:13px;box-sizing:border-box}
+select,input{border:1px solid var(--line);background:#fffaf5;color:var(--text)}
+button{background:var(--rot);color:white;border:0;font-weight:bold;box-shadow:0 3px 8px rgba(0,0,0,.12)}
+.gruen{background:var(--gruen)}
+.grau{background:var(--grau)}
+.orange{background:var(--orange)}
+.row{display:grid;grid-template-columns:1fr 90px;gap:8px}
+.zeile{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #ffe2c7;padding:11px 0;gap:10px}
+.miniBtn{width:auto;padding:8px 12px;margin-top:6px;border-radius:10px;font-size:16px;background:#b91c1c}
+.summe,.rueck{font-size:30px;font-weight:bold;text-align:right;margin-top:15px;color:#7c2d12}
+.rueck{color:var(--gruen)}
+.fehl{color:#b91c1c!important}
+.info{font-size:19px;line-height:1.55;background:#fff7ed;border-radius:14px;padding:12px;border:1px solid var(--line);overflow-x:auto}
+.badge{display:inline-block;background:#ffedd5;color:#7c2d12;border-radius:999px;padding:6px 10px;font-size:14px;font-weight:bold;margin-top:8px}
+.footer{position:fixed;left:0;right:0;bottom:0;background:rgba(255,247,237,.96);border-top:1px solid var(--line);padding:9px 14px;backdrop-filter:blur(10px)}
+.footerInner{max-width:580px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.footer button{margin-top:0;font-size:17px;padding:12px}
+table{width:100%;border-collapse:collapse;font-size:15px;background:white}
+th,td{border-bottom:1px solid #ffd7b5;padding:7px 4px;text-align:left}
+td:last-child,th:last-child{text-align:right}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.quick button{font-size:16px;padding:10px}
+.printOnly{display:none}
+@media print{
+header,.card:not(.druckbereich),.footer,button{display:none!important}
+body{background:white;color:black}
+main{padding:0;max-width:none}
+.druckbereich{display:block!important;box-shadow:none;border:0}
+.info{border:0;background:white;font-size:14px}
+h2{color:black}
+table{font-size:12px}
+.printOnly{display:block!important}
+}
+</style>
+</head>
+<body>
+<header>
+<img src="banner.png" alt="Armins Eisverkauf" onerror="this.style.display='none'">
+🍦 Armins Eisverkauf 2.1
+<div class="klein">Verkauf · Rückgeld · Statistik · Tagesbericht · Wochenbericht</div>
+</header>
+
 <main>
-<div class="card"><h2>🔍 Suche & Eis auswählen</h2><input id="suche" placeholder="Eissorte suchen..." oninput="filterSorten()"><div class="row"><select id="produkt"></select><input id="anzahl" type="number" min="1" value="1"></div><button onclick="add()">➕ Zur Liste hinzufügen</button><div class="quick"><button onclick="quickAdd('Nogger Choc')">Nogger</button><button onclick="quickAdd('Mini Milk')">Mini Milk</button><button onclick="quickAdd('Flutsch Finger')">Flutsch</button><button onclick="quickAdd('Magnum Classic')">Magnum</button></div><div class="badge">Mit Einzelpreisen, Statistik und Druckfunktion</div></div>
-<div class="card"><h2>🧾 Aktueller Kunde</h2><div id="liste">Noch nichts eingetragen.</div><div class="summe" id="gesamt">Gesamt: 0,00 €</div><input id="bezahlt" type="number" step="0.01" placeholder="Bezahlt mit z. B. 5" oninput="show()"><div class="rueck" id="rueckgeld">Rückgeld: 0,00 €</div><button class="gruen" onclick="bezahltUndNeu()">✅ Bezahlt / Neuer Kunde</button><button class="grau" onclick="clearList()">Aktuelle Liste löschen</button></div>
-<div class="card"><h2>📊 Tagesübersicht</h2><div class="info" id="tag"></div><button class="orange" onclick="bericht()">Tagesbericht anzeigen</button><button onclick="drucken()">🖨️ Tagesbericht drucken / als PDF speichern</button><button class="grau" onclick="resetTag()">Tagesabschluss zurücksetzen</button></div>
-<div class="card druckbereich"><h2>📋 Tagesbericht</h2><div class="info" id="bericht">Noch keine Verkäufe gespeichert.</div><div class="printOnly"><br><br>Kassenbestand: ____________________<br><br>Unterschrift: ____________________</div></div>
-</main><div class="footer"><div class="footerInner"><button class="grau" onclick="clearList()">Neu</button><button class="gruen" onclick="bezahltUndNeu()">Speichern</button></div></div>
+<div class="card">
+<h2>🔍 Suche & Eis auswählen</h2>
+<input id="suche" placeholder="Eissorte suchen..." oninput="filterSorten()">
+<div class="row">
+<select id="produkt"></select>
+<input id="anzahl" type="number" min="1" value="1">
+</div>
+<button onclick="add()">➕ Zur Liste hinzufügen</button>
+<div class="quick">
+<button onclick="quickAdd('Nogger Choc')">Nogger</button>
+<button onclick="quickAdd('Mini Milk')">Mini Milk</button>
+<button onclick="quickAdd('Flutsch Finger')">Flutsch</button>
+<button onclick="quickAdd('Magnum Classic')">Magnum</button>
+</div>
+<div class="badge">Mit Einzelpreisen, Statistik und Druckfunktion</div>
+</div>
+
+<div class="card">
+<h2>🧾 Aktueller Kunde</h2>
+<div id="liste">Noch nichts eingetragen.</div>
+<div class="summe" id="gesamt">Gesamt: 0,00 €</div>
+<input id="bezahlt" type="number" step="0.01" placeholder="Bezahlt mit z. B. 5" oninput="show()">
+<div class="rueck" id="rueckgeld">Rückgeld: 0,00 €</div>
+<button class="gruen" onclick="bezahltUndNeu()">✅ Bezahlt / Neuer Kunde</button>
+<button class="grau" onclick="clearList()">Aktuelle Liste löschen</button>
+</div>
+
+<div class="card">
+<h2>📊 Tagesübersicht</h2>
+<div class="info" id="tag"></div>
+<button class="orange" onclick="bericht()">Tagesbericht anzeigen</button>
+<button class="gruen" onclick="tagesabschluss()">🔒 Tagesbericht abschließen & speichern</button>
+<button onclick="drucken()">🖨️ Tagesbericht drucken / als PDF speichern</button>
+<button class="grau" onclick="resetTag()">Neuen Verkaufstag beginnen</button>
+</div>
+
+<div class="card druckbereich">
+<h2>📋 Tagesbericht</h2>
+<div class="info" id="bericht">Noch keine Verkäufe gespeichert.</div>
+<div class="printOnly"><br><br>Kassenbestand: ____________________<br><br>Unterschrift: ____________________</div>
+</div>
+
+<div class="card">
+<h2>📅 Wochenbericht</h2>
+<div class="info" id="woche">Noch keine abgeschlossenen Tagesberichte vorhanden.</div>
+<button class="orange" onclick="wochenbericht()">Wochenbericht anzeigen</button>
+</div>
+</main>
+
+<div class="footer">
+<div class="footerInner">
+<button class="grau" onclick="clearList()">Neu</button>
+<button class="gruen" onclick="bezahltUndNeu()">Speichern</button>
+</div>
+</div>
+
 <script>
-const produkte=[["Cornetto Buttermilch Zitrone",2],["Cornetto Haselnuss",2],["Cornetto Erdbeer",2],["Nogger Choc",2],["Domino",1.3],["Riesen Happen",1.7],["Mini Milk",0.8],["Flutsch Finger",1.3],["Magnum Classic",2.9],["Magnum White Chocolate",2.9],["Magnum Mandel",2.9],["Ben & Jerry's Strawberry Cheesecake",2.85],["Ben & Jerry's Cookie Dough",2.85],["Ben & Jerry's Chocolate Fudge Brownie",2.85]];
-let liste=[];let tag=JSON.parse(localStorage.getItem("eisTagV2")||localStorage.getItem("eisTag")||'{"anzahl":0,"umsatz":0,"sorten":{},"verkaeufe":0}');
-function euro(x){return Number(x||0).toLocaleString("de-DE",{style:"currency",currency:"EUR"});}
+const produkte=[
+["Cornetto Buttermilch Zitrone",2],
+["Cornetto Haselnuss",2],
+["Cornetto Erdbeer",2],
+["Nogger Choc",2],
+["Domino",1.3],
+["Riesen Happen",1.7],
+["Mini Milk",0.8],
+["Flutsch Finger",1.3],
+["Magnum Classic",2.9],
+["Magnum White Chocolate",2.9],
+["Magnum Mandel",2.9],
+["Ben & Jerry's Strawberry Cheesecake",2.85],
+["Ben & Jerry's Cookie Dough",2.85],
+["Ben & Jerry's Chocolate Fudge Brownie",2.85]
+];
+
+let liste=[];
+let tag=JSON.parse(localStorage.getItem("eisTagV2")||localStorage.getItem("eisTag")||'{"anzahl":0,"umsatz":0,"sorten":{},"verkaeufe":0}');
+let archiv=JSON.parse(localStorage.getItem("eisWochenArchiv")||"[]");
+
+function euro(x){return Number(x||0).toLocaleString("de-DE",{style:"currency",currency:"EUR"})}
 function preisVon(n){let p=produkte.find(x=>x[0]===n);return p?p[1]:0}
 function fillSelect(arr=produkte){document.getElementById("produkt").innerHTML=arr.map(p=>'<option value="'+p[0]+'|'+p[1]+'">'+p[0]+' – '+euro(p[1])+'</option>').join("")}
 function filterSorten(){let q=document.getElementById("suche").value.toLowerCase();fillSelect(produkte.filter(p=>p[0].toLowerCase().includes(q)))}
@@ -22,12 +146,208 @@ function quickAdd(name){liste.push({name,preis:preisVon(name),anzahl:1});show()}
 function del(i){liste.splice(i,1);show()}
 function clearList(){liste=[];document.getElementById("bezahlt").value="";show()}
 function saveTag(){localStorage.setItem("eisTagV2",JSON.stringify(tag))}
-function bezahltUndNeu(){let ges=bestellSumme();if(ges<=0){alert("Bitte erst ein Eis hinzufügen.");return}let st=liste.reduce((s,e)=>s+e.anzahl,0);tag.anzahl=(tag.anzahl||0)+st;tag.umsatz=(tag.umsatz||0)+ges;tag.verkaeufe=(tag.verkaeufe||0)+1;tag.sorten=tag.sorten||{};liste.forEach(e=>tag.sorten[e.name]=(tag.sorten[e.name]||0)+e.anzahl);saveTag();clearList();showTag();bericht()}
-function resetTag(){if(confirm("Tagesabschluss wirklich zurücksetzen?")){tag={anzahl:0,umsatz:0,sorten:{},verkaeufe:0};saveTag();showTag();bericht()}}
-function topSorte(){let keys=Object.keys(tag.sorten||{});if(!keys.length)return "-";let top=keys.sort((a,b)=>tag.sorten[b]-tag.sorten[a])[0];return top+" ("+tag.sorten[top]+"x)"}
-function showTag(){let schnitt=(tag.anzahl||0)>0?(tag.umsatz/tag.anzahl):0;document.getElementById("tag").innerHTML="Verkäufe/Kunden: <b>"+(tag.verkaeufe||0)+"</b><br>Verkaufte Eis: <b>"+(tag.anzahl||0)+"</b><br>Tagesumsatz: <b>"+euro(tag.umsatz||0)+"</b><br>Ø pro Eis: <b>"+euro(schnitt)+"</b><br>Meistverkauft: <b>"+topSorte()+"</b>"}
-function show(){let box=document.getElementById("liste"),ges=bestellSumme();if(liste.length===0){box.innerHTML="Noch nichts eingetragen.";document.getElementById("gesamt").innerText="Gesamt: 0,00 €";let rg=document.getElementById("rueckgeld");rg.innerText="Rückgeld: 0,00 €";rg.className="rueck";return}box.innerHTML="";liste.forEach((e,i)=>{let sum=e.preis*e.anzahl;box.innerHTML+='<div class="zeile"><div><b>'+e.anzahl+'x '+e.name+'</b><br>'+euro(e.preis)+' pro Stück</div><div style="text-align:right"><b>'+euro(sum)+'</b><br><button class="miniBtn" onclick="del('+i+')">X</button></div></div>'});document.getElementById("gesamt").innerText="Gesamt: "+euro(ges);let bez=Number(document.getElementById("bezahlt").value)||0;let r=bez-ges;let rg=document.getElementById("rueckgeld");rg.innerText=r>=0?"Rückgeld: "+euro(r):"Es fehlen: "+euro(Math.abs(r));rg.className=r>=0?"rueck":"rueck fehl"}
-function bericht(){let b=document.getElementById("bericht");if((tag.anzahl||0)===0){b.innerHTML="Noch keine Verkäufe gespeichert.";return}let jetzt=new Date();let t="<b>Armins Eisverkauf – Tagesbericht</b><br><b>Datum:</b> "+jetzt.toLocaleDateString("de-DE")+"<br><b>Uhrzeit:</b> "+jetzt.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"})+"<br><br><b>Kunden/Verkäufe:</b> "+(tag.verkaeufe||0)+"<br><b>Verkaufte Eis:</b> "+(tag.anzahl||0)+"<br><b>Tagesumsatz:</b> "+euro(tag.umsatz||0)+"<hr><table><tr><th>Sorte</th><th>Menge</th><th>Einzelpreis</th><th>Summe</th></tr>";Object.keys(tag.sorten||{}).sort().forEach(n=>{let menge=tag.sorten[n];let p=preisVon(n);t+="<tr><td>"+n+"</td><td>"+menge+"x</td><td>"+euro(p)+"</td><td>"+euro(menge*p)+"</td></tr>"});t+="</table>";b.innerHTML=t}
+function saveArchiv(){localStorage.setItem("eisWochenArchiv",JSON.stringify(archiv))}
+
+function bezahltUndNeu(){
+  if(tag.abgeschlossenAm){
+    alert("Der heutige Tagesbericht ist bereits abgeschlossen. Bitte zuerst einen neuen Verkaufstag beginnen.");
+    return;
+  }
+  let ges=bestellSumme();
+  if(ges<=0){alert("Bitte erst ein Eis hinzufügen.");return}
+  let st=liste.reduce((s,e)=>s+e.anzahl,0);
+  tag.anzahl=(tag.anzahl||0)+st;
+  tag.umsatz=(tag.umsatz||0)+ges;
+  tag.verkaeufe=(tag.verkaeufe||0)+1;
+  tag.sorten=tag.sorten||{};
+  liste.forEach(e=>tag.sorten[e.name]=(tag.sorten[e.name]||0)+e.anzahl);
+  saveTag();
+  clearList();
+  showTag();
+  bericht();
+}
+
+function topSorte(obj=tag){
+  let keys=Object.keys(obj.sorten||{});
+  if(!keys.length)return "-";
+  let top=keys.sort((a,b)=>(obj.sorten[b]||0)-(obj.sorten[a]||0))[0];
+  return top+" ("+obj.sorten[top]+"x)";
+}
+
+function showTag(){
+  let schnitt=(tag.anzahl||0)>0?(tag.umsatz/tag.anzahl):0;
+  let status=tag.abgeschlossenAm
+    ? "<br><b>🔒 Abgeschlossen</b>"
+    : "<br><b>🟢 Offen</b>";
+  document.getElementById("tag").innerHTML=
+    "Verkäufe/Kunden: <b>"+(tag.verkaeufe||0)+"</b><br>"+
+    "Verkaufte Eis: <b>"+(tag.anzahl||0)+"</b><br>"+
+    "Tagesumsatz: <b>"+euro(tag.umsatz||0)+"</b><br>"+
+    "Ø pro Eis: <b>"+euro(schnitt)+"</b><br>"+
+    "Meistverkauft: <b>"+topSorte()+"</b>"+status;
+}
+
+function show(){
+  let box=document.getElementById("liste"),ges=bestellSumme();
+  if(liste.length===0){
+    box.innerHTML="Noch nichts eingetragen.";
+    document.getElementById("gesamt").innerText="Gesamt: 0,00 €";
+    let rg=document.getElementById("rueckgeld");
+    rg.innerText="Rückgeld: 0,00 €";
+    rg.className="rueck";
+    return;
+  }
+  box.innerHTML="";
+  liste.forEach((e,i)=>{
+    let sum=e.preis*e.anzahl;
+    box.innerHTML+='<div class="zeile"><div><b>'+e.anzahl+'x '+e.name+'</b><br>'+euro(e.preis)+' pro Stück</div><div style="text-align:right"><b>'+euro(sum)+'</b><br><button class="miniBtn" onclick="del('+i+')">X</button></div></div>'
+  });
+  document.getElementById("gesamt").innerText="Gesamt: "+euro(ges);
+  let bez=Number(document.getElementById("bezahlt").value)||0;
+  let r=bez-ges;
+  let rg=document.getElementById("rueckgeld");
+  rg.innerText=r>=0?"Rückgeld: "+euro(r):"Es fehlen: "+euro(Math.abs(r));
+  rg.className=r>=0?"rueck":"rueck fehl";
+}
+
+function bericht(){
+  let b=document.getElementById("bericht");
+  if((tag.anzahl||0)===0){
+    b.innerHTML="Noch keine Verkäufe gespeichert.";
+    return;
+  }
+
+  let zeitpunkt=tag.abgeschlossenAm ? new Date(tag.abgeschlossenAm) : new Date();
+  let datum=zeitpunkt.toLocaleDateString("de-DE");
+  let uhrzeit=zeitpunkt.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"});
+
+  let t="<b>Armins Eisverkauf – Tagesbericht</b><br>"+
+    "<b>Datum:</b> "+datum+"<br>"+
+    "<b>Uhrzeit:</b> "+uhrzeit+"<br><br>"+
+    "<b>Kunden/Verkäufe:</b> "+(tag.verkaeufe||0)+"<br>"+
+    "<b>Verkaufte Eis:</b> "+(tag.anzahl||0)+"<br>"+
+    "<b>Tagesumsatz:</b> "+euro(tag.umsatz||0)+
+    "<hr><table><tr><th>Sorte</th><th>Menge</th><th>Einzelpreis</th><th>Summe</th></tr>";
+
+  Object.keys(tag.sorten||{}).sort().forEach(n=>{
+    let menge=tag.sorten[n],p=preisVon(n);
+    t+="<tr><td>"+n+"</td><td>"+menge+"x</td><td>"+euro(p)+"</td><td>"+euro(menge*p)+"</td></tr>";
+  });
+
+  t+="</table>";
+  if(tag.abgeschlossenAm)t+="<br><b>🔒 Tagesbericht abgeschlossen und fest gespeichert</b>";
+  b.innerHTML=t;
+}
+
+function tagesabschluss(){
+  if((tag.anzahl||0)===0){
+    alert("Es wurden heute noch keine Verkäufe gespeichert.");
+    return;
+  }
+  if(tag.abgeschlossenAm){
+    alert("Dieser Tagesbericht wurde bereits abgeschlossen.");
+    return;
+  }
+  if(!confirm("Tagesbericht jetzt abschließen?\n\nDatum und Uhrzeit werden danach fest gespeichert und ändern sich später nicht mehr."))return;
+
+  tag.abgeschlossenAm=new Date().toISOString();
+  saveTag();
+
+  archiv.push(JSON.parse(JSON.stringify(tag)));
+  saveArchiv();
+
+  showTag();
+  bericht();
+  wochenbericht();
+
+  alert("Tagesbericht wurde fest gespeichert.");
+}
+
+function resetTag(){
+  if((tag.anzahl||0)>0 && !tag.abgeschlossenAm){
+    if(!confirm("Der aktuelle Tagesbericht wurde noch nicht abgeschlossen.\n\nTrotzdem neuen Verkaufstag beginnen?"))return;
+  }
+  tag={anzahl:0,umsatz:0,sorten:{},verkaeufe:0};
+  saveTag();
+  showTag();
+  bericht();
+}
+
+function startDerWoche(d){
+  let x=new Date(d);
+  x.setHours(0,0,0,0);
+  let tagNr=x.getDay();
+  let diff=tagNr===0?-6:1-tagNr;
+  x.setDate(x.getDate()+diff);
+  return x;
+}
+
+function wochenbericht(){
+  let box=document.getElementById("woche");
+  let heute=new Date();
+  let start=startDerWoche(heute);
+  let ende=new Date(start);
+  ende.setDate(ende.getDate()+6);
+  ende.setHours(23,59,59,999);
+
+  let tage=archiv.filter(e=>{
+    if(!e.abgeschlossenAm)return false;
+    let d=new Date(e.abgeschlossenAm);
+    return d>=start && d<=ende;
+  });
+
+  if(!tage.length){
+    box.innerHTML="<b>Aktuelle Woche</b><br>"+
+      start.toLocaleDateString("de-DE")+" – "+ende.toLocaleDateString("de-DE")+
+      "<br><br>Noch keine abgeschlossenen Tagesberichte.";
+    return;
+  }
+
+  let eis=0,umsatz=0,kunden=0,sorten={};
+
+  tage.forEach(e=>{
+    eis+=e.anzahl||0;
+    umsatz+=e.umsatz||0;
+    kunden+=e.verkaeufe||0;
+    Object.keys(e.sorten||{}).forEach(n=>{
+      sorten[n]=(sorten[n]||0)+(e.sorten[n]||0);
+    });
+  });
+
+  let t="<b>Armins Eisverkauf – Wochenbericht</b><br>"+
+    "<b>Woche:</b> "+start.toLocaleDateString("de-DE")+" – "+ende.toLocaleDateString("de-DE")+"<br><br>";
+
+  tage
+    .slice()
+    .sort((a,b)=>new Date(a.abgeschlossenAm)-new Date(b.abgeschlossenAm))
+    .forEach(e=>{
+      let d=new Date(e.abgeschlossenAm);
+      t+="<b>"+d.toLocaleDateString("de-DE")+" – "+
+        d.toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"})+"</b><br>"+
+        (e.verkaeufe||0)+" Kunden · "+(e.anzahl||0)+" Eis · "+euro(e.umsatz||0)+"<br><br>";
+    });
+
+  t+="<hr>"+
+    "<b>Gesamt Kunden:</b> "+kunden+"<br>"+
+    "<b>Gesamt verkaufte Eis:</b> "+eis+"<br>"+
+    "<b>Gesamtumsatz:</b> "+euro(umsatz);
+
+  let keys=Object.keys(sorten);
+  if(keys.length){
+    let top=keys.sort((a,b)=>sorten[b]-sorten[a])[0];
+    t+="<br><b>Meistverkauft:</b> "+top+" ("+sorten[top]+"x)";
+  }
+
+  box.innerHTML=t;
+}
+
 function drucken(){bericht();setTimeout(()=>window.print(),200)}
-fillSelect();show();showTag();bericht();
-</script></body></html>
+
+fillSelect();
+show();
+showTag();
+bericht();
+wochenbericht();
+</script>
+</body>
+</html>
